@@ -30,12 +30,6 @@ export const Book = sequelize.define('books',{
 });
 
 
-Book.hasMany(Gender, {
-	foreignKey: 'bookId',
-	sourceKey: 'id'
-})
+Book.belongsToMany(Gender, { through: "book-gender" })
 
-Gender.belongsTo(Book, {
-	foreignKey: 'bookId',
-	targetId: 'id'
-})
+Gender.belongsToMany(Book, { through: "book-gender" })
