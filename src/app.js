@@ -1,5 +1,12 @@
 import express from "express";
 
-const app = express(); //probando
+import book from './routes/book.js'
+
+
+const app = express();
+
+app.use(book)
+
+
 
 export default app;

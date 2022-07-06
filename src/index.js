@@ -1,15 +1,16 @@
 import app from './app.js';
 import {sequelize} from './db/db.js'
 
+// import'./models/Book.js'
+// import'./models/Gender.js'
+
 async function main(){
 try {
-await sequelize.authenticate();
-console.log('connection successfully')
+await sequelize.sync({force: false})
 app.listen(4000)
 console.log('csv online on port',4000)}
 catch(error){
-	console.error('fail',error)
-}
+	console.error('fail',error)}
 }
 
 main();
