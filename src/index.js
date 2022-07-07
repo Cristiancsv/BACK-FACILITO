@@ -4,6 +4,7 @@ import {sequelize} from './db/db.js'
 import'./models/Book.js'
 import'./models/Gender.js'
 
+//Aca creamos la base de datos de pgAdmin.
 async function main(){
 try {
 await sequelize.sync({force: true})

@@ -2,7 +2,7 @@ import {DataTypes} from 'sequelize';
 
 import {sequelize} from '../db/db.js'
 
-import {Gender} from './Gender.js'
+
 
 export const Book = sequelize.define('books',{
 	id : {
@@ -30,6 +30,3 @@ export const Book = sequelize.define('books',{
 });
 
 
-Book.belongsToMany(Gender, { through: "book-gender" })
-
-Gender.belongsToMany(Book, { through: "book-gender" })
