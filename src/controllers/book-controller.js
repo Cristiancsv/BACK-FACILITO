@@ -1,5 +1,5 @@
 import { Book } from "../models/Book.js";
-
+import { Gender } from "../models/Gender.js"
 const array = [
   {
     id: 43,
@@ -7,6 +7,8 @@ const array = [
     img: "https://www.laprensa.com.ar/multimedios/imgs/137943_620.jpg",
     link: "https://www.youtube.com/watch?v=deQaA80k2_8",
     des: "descripción del arbol viejo",
+    gender: "miedo",
+    descriptiongender:"da miedo",
   },
   {
     id: 23,
@@ -14,6 +16,8 @@ const array = [
     img: "https://storage.googleapis.com/www-paredro-com/uploads/2018/10/Leches-La-Laguna-el-significado-del-logo-de-LALA1.jpg",
     link: "https://www.youtube.com/watch?v=9SiNFya55Fo",
     des: "esta descripción del 2",
+    gender:"risa",
+    descriptiongender:"da risa",
   },
 ];
 
@@ -25,7 +29,7 @@ const getApi = async () => {
     array.map(async (e) => {
       await Book.findOrCreate({
         where: {
-          name: e.nombre,
+          title: e.nombre,
           img: e.img,
           description: e.des,
           link: e.link,
@@ -36,6 +40,8 @@ const getApi = async () => {
   } else {
     return db;
   }
+
+ 
 };
 
 export const getBooks = async (req, res) => {

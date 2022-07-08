@@ -11,7 +11,7 @@ export const Book = sequelize.define('books',{
 		autoIncrement: true
 	},
 	
-	name : {
+	title : {
 		type: DataTypes.STRING
 	},
 
