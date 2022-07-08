@@ -1,9 +1,10 @@
-import {DataTypes} from 'sequelize';
-
-import {sequelize} from '../db/db.js'
-
-export const Gender = sequelize.define('genders', {
-	id: {
+const { DataTypes } = require('sequelize');
+// Exportamos una funcion que define el modelo
+// Luego le injectamos la conexion a sequelize.
+module.exports = (sequelize) => {
+  // defino el modelo
+  sequelize.define('gender', {
+    id: {
 		type : DataTypes.INTEGER,
 		primaryKey: true,
 		autoIncrement: true
@@ -17,4 +18,5 @@ export const Gender = sequelize.define('genders', {
 	description : {
 		type : DataTypes.STRING
 	},
-});
+  });
+};
